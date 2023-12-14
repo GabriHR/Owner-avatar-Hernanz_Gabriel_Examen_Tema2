@@ -28,3 +28,8 @@ void inicializarEstudiante(struct Estudiante* estudiante, const char* nombre, in
     estudiante->num_asistencias = 0;
     estudiante->capacidad_asistencias = capacidad_asistencias;
 }
+
+// Función para liberar la memoria de las asistencias de un estudiante
+void liberarEstudiante(struct Estudiante* estudiante) {
+    free(estudiante->asistencias);
+}
