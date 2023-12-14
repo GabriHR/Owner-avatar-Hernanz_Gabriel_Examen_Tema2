@@ -59,3 +59,22 @@ void mostrarAsistencia(const struct Estudiante* estudiante) {
         printf("Estado: %s\n\n", estudiante->asistencias[i].estado);
     }
 }
+
+int main() {
+    // Crear una instancia de la estructura Estudiante
+    struct Estudiante estudiante1;
+    inicializarEstudiante(&estudiante1, "Gabriel", 18, 7.5, 10);
+
+    // Registrar asistencia para el estudiante
+    registrarAsistencia(&estudiante1, "2023-01-01", "Matematicas", "asistio");
+    registrarAsistencia(&estudiante1, "2023-01-02", "Historia", "falta");
+    registrarAsistencia(&estudiante1, "2023-01-03", "Fisica", "tardanza");
+
+    // Mostrar la asistencia del estudiante
+    mostrarAsistencia(&estudiante1);
+
+    // Liberar la memoria de las asistencias
+    liberarEstudiante(&estudiante1);
+
+    return 0;
+}
