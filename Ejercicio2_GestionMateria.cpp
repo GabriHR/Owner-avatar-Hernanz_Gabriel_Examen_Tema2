@@ -37,3 +37,18 @@ void mostrarAsistencia(const Estudiante& estudiante) {
         cout << "Estado: " << asistencia.estado << "\n\n";
     }
 }
+
+int main() {
+    // Crear una instancia de la estructura Estudiante
+    Estudiante estudiante1 = {"Gabriel", 18, 7.5};
+
+    // Registrar asistencia para el estudiante
+    registrarAsistencia(estudiante1, Asistencia("2023-01-01", "Matematicas", "asistio"));
+    registrarAsistencia(estudiante1, Asistencia("2023-01-02", "Historia", "falta"));
+    registrarAsistencia(estudiante1, Asistencia("2023-01-03", "Fisica", "tardanza"));
+
+    // Mostrar la asistencia del estudiante
+    mostrarAsistencia(estudiante1);
+
+    return 0;
+}
