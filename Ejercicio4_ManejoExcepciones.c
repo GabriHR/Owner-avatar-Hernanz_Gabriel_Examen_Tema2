@@ -33,3 +33,18 @@ void inicializarEstudiante(struct Estudiante* estudiante, const char* nombre, in
 void liberarEstudiante(struct Estudiante* estudiante) {
     free(estudiante->asistencias);
 }
+
+// Función para registrar la asistencia de un estudiante
+void registrarAsistencia(struct Estudiante* estudiante, const char* fecha, const char* materia, const char* estado) {
+    if (estudiante->num_asistencias < estudiante->capacidad_asistencias) {
+        struct Asistencia nuevaAsistencia;
+        strcpy(nuevaAsistencia.fecha, fecha);
+        strcpy(nuevaAsistencia.materia, materia);
+        strcpy(nuevaAsistencia.estado, estado);
+
+        estudiante->asistencias[estudiante->num_asistencias] = nuevaAsistencia;
+        estudiante->num_asistencias++;
+    } else {
+        printf("Error: No hay suficiente espacio para más asistencias.\n");
+    }
+}
