@@ -39,3 +39,18 @@ struct Estudiante {
         }
     }
 };
+
+int main() {
+    // Crear una instancia de la estructura Estudiante
+    Estudiante estudiante1 = {"Gabriel", 18, 7.5};
+
+    // Registrar asistencia para el estudiante
+    estudiante1.registrarAsistencia("2023-01-01", "Ingles", "asistio");
+    estudiante1.registrarAsistencia("2023-01-02", "Programacion", "falta");
+    estudiante1.registrarAsistencia("2023-01-03", "Matematicas", "tardanza");
+
+    // Mostrar la asistencia del estudiante
+    estudiante1.mostrarAsistencia();
+
+    return 0;
+}
