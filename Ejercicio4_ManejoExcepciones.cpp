@@ -8,3 +8,12 @@ public:
         return "Ha ocurrido un error personalizado";
     }
 };
+
+// Función que puede lanzar la excepción personalizada
+void funcionConExcepcion(bool lanzarExcepcion) {
+    if (lanzarExcepcion) {
+        throw MiExcepcion();
+    } else {
+        cout << "La funcion se ejecuto correctamente." << endl;
+    }
+}
