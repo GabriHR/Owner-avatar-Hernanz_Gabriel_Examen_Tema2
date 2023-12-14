@@ -44,3 +44,26 @@ void mostrarMaterias(const struct Estudiante* estudiante) {
         printf("%s\n", estudiante->materias[i]);
     }
 }
+
+int main() {
+    // Crear una instancia de la estructura Estudiante
+    struct Estudiante estudiante1;
+    strcpy(estudiante1.nombre, "Gabriel");
+    estudiante1.edad = 18;
+    estudiante1.promedio = 7.5;
+    estudiante1.materias = NULL;
+    estudiante1.num_materias = 0;
+
+    // Agregar materias
+    agregarMateria(&estudiante1, "Matematicas");
+    agregarMateria(&estudiante1, "Historia");
+    agregarMateria(&estudiante1, "Fisica");
+
+    // Mostrar materias
+    mostrarMaterias(&estudiante1);
+
+    // Eliminar una materia
+    eliminarMateria(&estudiante1, 1);
+
+    return 0;
+}
