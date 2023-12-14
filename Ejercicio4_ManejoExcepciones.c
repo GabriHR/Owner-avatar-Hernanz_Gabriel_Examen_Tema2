@@ -18,3 +18,13 @@ struct Estudiante {
     int num_asistencias; // Número actual de asistencias
     int capacidad_asistencias; // Capacidad máxima de asistencias
 };
+
+// Función para inicializar un estudiante
+void inicializarEstudiante(struct Estudiante* estudiante, const char* nombre, int edad, float promedio, int capacidad_asistencias) {
+    strcpy(estudiante->nombre, nombre);
+    estudiante->edad = edad;
+    estudiante->promedio = promedio;
+    estudiante->asistencias = malloc(capacidad_asistencias * sizeof(struct Asistencia));
+    estudiante->num_asistencias = 0;
+    estudiante->capacidad_asistencias = capacidad_asistencias;
+}
