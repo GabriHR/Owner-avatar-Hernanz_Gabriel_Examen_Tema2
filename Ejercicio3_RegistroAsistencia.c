@@ -48,3 +48,14 @@ void registrarAsistencia(struct Estudiante* estudiante, const char* fecha, const
         printf("Error: No hay suficiente espacio para más asistencias.\n");
     }
 }
+
+// Función para mostrar la asistencia de un estudiante
+void mostrarAsistencia(const struct Estudiante* estudiante) {
+    printf("Asistencia para el estudiante %s:\n", estudiante->nombre);
+
+    for (int i = 0; i < estudiante->num_asistencias; i++) {
+        printf("Fecha: %s\n", estudiante->asistencias[i].fecha);
+        printf("Materia: %s\n", estudiante->asistencias[i].materia);
+        printf("Estado: %s\n\n", estudiante->asistencias[i].estado);
+    }
+}
